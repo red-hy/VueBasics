@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <div class="root">
+        <h1>Hello, {{name}}</h1>
+    </div>
+
+    <!--引入vue-->
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+        
+        //创建vue实例
+        //const x = new Vue({ 也可
+        new Vue({
+            el:'.root',   //#el同于指定Vue实例指向哪个容器服务，值通常为css选择器字符串
+            data:{
+                name:'尚硅谷123'
+            }
+        })
+    </script>
+</body>
+</html>

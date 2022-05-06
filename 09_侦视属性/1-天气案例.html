@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天气案例</title>
+    <script text="text/javascript" src="../js/vue.js"> </script>
+</head>
+<body>
+
+    <div id="root">
+        <!-- <p>今天天气很{{ishot ? '炎热':'凉爽'}}</p>             插值语法-->
+        <!-- <button @click="ishot=!ishot">点击改变天气</button> -->
+        <!-- <p>今天天气很{{info}}</p>                             计算属性方法      -->
+        <!-- <button @click="ishot=!ishot">点击改变天气</button> -->
+
+        <button @click="ishot=!ishot">点击改变天气</button>
+
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el:'#root',
+            data:{
+                ishot:true
+            },
+            //计算属性方法
+            // computed:{
+            //     // info:function(){
+            //     info(){
+            //         return this.ishot ? '炎热' : '凉爽';
+            //     }
+            // }
+
+            //插值方法
+            // methods:{
+            //     tq(){
+            //         this.ishot = !this.ishot;
+            //     }
+            // }
+        });
+</script>
+</body>
+</html>

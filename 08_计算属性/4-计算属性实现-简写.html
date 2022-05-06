@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue计算属性语法实现</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="root">
+    姓:<input type="text" v-model="firstName"/>
+    <br/><br/>
+    名:<input type="text" v-model="lastName"/>
+    <br/><br/>
+    测试:<input type="text" v-model="test"/>
+    <br/><br/>
+    全名: <span>{{ fullname }}</span>
+</div>
+<script type="text/javascript">
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            //data里的都是属性
+            firstName: '张',
+            lastName: '三',
+            test:'test'
+        },
+        //计算属性--> 旧属性加工
+        computed: {
+            fullname(){
+                return this.firstName+'-'+this.lastName;
+            }
+            //当计算属性不允许修改时，计算属性fullname的简写方法
+            // fullname(){
+            //     return this.firstName+'-'+this.lastName;
+            // }
+            
+            
+            // fullName:{
+            //     get(){
+            //         console.log('get调用了', this);
+            //         return this.firstName + '--' + this.lastName
+            //     },
+            //      set(value){
+            //         const [ firstName, lastName ] = value.split('-');
+            //         this.firstName = firstName;
+            //         this.lastName = lastName; 
+            //     }
+            // }
+
+            
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>插值语法</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1>{{name}}</h1>
+
+        姓：<input type="text" v-model="firstname"><br><br>
+        名：<input type="text" v-model="lastname"><br><br>
+
+        全名：<span>{{firstname}}-{{lastname}}</span>
+    </div>
+
+    <!--每一次vue中data内的值发生改变，都会触发网页模板的重新解析-->
+    <script type="text/javascript">
+        new Vue({
+            el:'#root',
+            data:{
+                name:'red',
+                firstname:'ya',
+                lastname:'red'
+            }
+        });
+    </script>
+</body>
+</html>
